@@ -1,0 +1,423 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  font-size: 1vw;
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Arial', serif;
+}
+
+body {
+  overflow-x:hidden;
+  position: fixed;
+
+}   
+
+.green {
+  color: #497D67 !important;
+}
+
+main {
+  max-width: 2200px;
+  margin: 0 auto;
+}
+
+section{
+  padding-bottom: 50px;
+  transition: 600ms;
+}
+
+.name {
+  display: flex;
+  font-weight: normal;
+  font-size: 3em;
+  font-family: 'Helvetica';
+}
+
+#app {
+  padding: 0px 10px;
+}
+
+.site-loader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.coords {
+  font-weight: 900;
+  font-size: 10em;
+  font-family: 'Arial Black';
+}
+
+.coords span {
+  color: #749FC9;
+}
+
+.prevers {
+  rotate: 180deg;
+  letter-spacing: 1.75em;
+}
+
+.prevers:last-child {
+  /* letter-spacing: 0; */
+}
+
+.prevers span{
+  rotate: 0deg;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.pinContainer {
+  min-height: 3000px;
+  position: relative;
+
+  margin-bottom: calc(-100vh - 40px);
+}
+
+.firstBlock {
+  max-height: 100vh;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.firstBlock h1 {
+  font-size: 9em;
+  font-weight: 900;
+  font-family: 'Arial Black';
+  text-align: start;
+  line-height: 1em;
+}
+
+.firstBlock h1 span {
+  color: #425871;
+}
+
+.firstBlock p {
+  font-size: 2.75em;
+  font-weight: 900;
+  font-family: 'Arial Black';
+  text-align: start;
+
+  /*margin: 10px 0;*/
+}
+
+.firstBlock p span {
+  color: #EB6420;
+}
+
+.firstBlock img {
+  width: 100%;
+  height: 80vh;
+  border-radius: 20px;
+}
+
+.secondBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.secondBlock h1 {
+  font-size: 9em;
+  font-weight: 900;
+  font-family: 'Arial Black';
+  text-align: start;
+  line-height: 1em;
+}
+
+.secondBlock h1 span {
+  color: #425871;
+}
+
+.secondBlock p {
+  font-size: 2.75em;
+  font-weight: 900;
+  font-family: 'Arial Black';
+  text-align: start;
+}
+
+.secondBlock p span {
+  color: #425871;
+}
+
+.secondBlock img {
+  width: 100%;
+  height: 106vh;
+  border-radius: 20px;
+}
+
+.thirdBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+}
+
+.thirdBlockCard {
+  display: flex;
+  gap: 80px;
+  width: 2000px;
+  max-height: 1000px;
+  padding: 20px 0;
+  margin: auto 0;
+
+  transition: 700ms;
+}
+
+.cardContainer {
+  position: sticky;
+  top: 0;
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.thirdBlockCardLeft {
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.thirdBlockCardLeft img {
+  image-resolution: from-image;
+  aspect-ratio: 1;
+  height: 850px;
+  width: 985px;
+  border-radius: 10px;
+}
+
+@media (max-width: 1000px) {
+  .thirdBlockCard {
+    flex-direction: column;
+    align-items: center;
+  }
+  .thirdBlockCardLeft img {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.thirdBlockCardRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.thirdBlockCardRight h1 {
+  font-size: 5em;
+  font-weight: 900;
+  text-align: start;
+  line-height: 1em;
+}
+.thirdBlockCardRight span {
+  color: #425870;
+}
+
+.thirdBlockCardRight p {
+  font-weight: 900;
+  font-size: 2em;
+  max-width: 20em;
+}
+
+
+.fourthBlock {
+  display: flex;
+  flex-direction: column;
+  background: #425871;
+  padding: 20px 10px 20px 10px;
+  margin-top: 100vh;
+  border-radius: 20px;
+  gap: 10px;
+  color: #fff;
+}
+
+
+.fifthBlock h1 {
+  font-size: 9em;
+  font-weight: 900;
+  font-family: 'Arial', serif;
+  text-align: start;
+  line-height: 1.25em;
+}
+
+.fifthBlock h1 span:first-of-type {
+  color: #749FC9;
+}
+
+.fifthBlock h1 span:last-of-type {
+  color: #EB6420;
+}
+
+.fifthBlock div {
+  font-size: 1em;
+  font-family: 'Arial';
+}
+
+.description li:first-child{
+  font-size: 1.5em;
+}
+
+.fifthBlock div span {
+  color: #EB6420;
+}
+
+.fourthBlock h2 {
+  font-size: 4em;
+  line-height: 1.25em;
+  font-family: 'Arial', serif;
+  text-transform: inherit;
+}
+
+.fourthBlock ul.description {
+  list-style: none;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.fourthBlock .description ul:first-child > li:nth-child(1) {
+  border: none;
+}
+
+.fourthBlock .description > li:nth-child(1) {
+  border: none;
+}
+
+.fourthBlock .description ul:first-child > li:nth-child(2) {
+  border: none;
+}
+
+.fourthBlock .description ul:first-child > li:nth-child(3) {
+  border: none;
+}
+.fourthBlock .description ul:first-child > li:nth-child(4) {
+  border: none;
+}
+
+
+.fourthBlock .description li {
+  font-size: 1.5em;
+  font-family: 'Arial', serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 7px 0;
+
+}
+.fourthBlock ul.description li ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.5em;
+  list-style: disc;
+}
+
+.fourthBlock ul.description li ul li::marker {
+  color: #ff5900;
+}
+
+.fifthBlock p {
+  font-size: 1em;
+  font-weight: 900;
+  font-family: 'Arial Black', serif;
+}
+
+.fifthBlock p:last-of-type {
+  font-size: 1em;
+  font-weight: 900;
+  font-family: 'Arial Black', serif;
+  color: #497D67;
+  padding: 20px 0 10px 0;
+  margin-bottom: 220px;
+}
+
+.emailBlock {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center; /* Центрирование элементов внутри блока */
+  overflow: hidden; /* Скрыть элементы, выходящие за пределы контейнера */
+  position: fixed; /* Фиксируем позицию формы */
+  bottom: 20px; /* Расположение формы от низа страницы */
+  right: -100%; /* Начальная позиция (вне экрана) */
+  transition: right 0.5s ease; /* Плавный переход */
+  width: 100%;
+}
+
+.emailBlock.show {
+  right: 20px; /* Позиция, когда форма видима */
+}
+
+.emailBlock input {
+  padding: 20px;
+  width: 95%;
+  height: 230px;
+  color: white;
+  border-radius: 130px;
+  border: none;
+  margin-left: 30px;
+  background: #749FC9;
+  font-weight: bold;
+  font-size: 2em; /* Изменение размера для лучшего восприятия */
+}
+
+.emailBlock input::placeholder {
+  color: white;
+  font-weight: bold;
+  opacity: 1;
+}
+
+.emailBlock button {
+  padding: 10px;
+  border-radius: 100%;
+  width: 240px;
+  height: 230px;
+  border: none;
+  background: #749FC9;
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+  transition: background 0.3s ease; /* Плавный переход цвета фона */
+}
+
+.emailBlock button:hover {
+  background: #5a8dc4; /* Изменение цвета кнопки при наведении */
+}
+
+.image-container {
+  z-index: 3;
+  overflow: hidden; /* Скрываем часть изображения, выходящую за пределы контейнера */
+  border-radius: 15px; /* Закругляем углы контейнера */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Добавляем тень к контейнеру */
+  transition: transform 0.5s ease, box-shadow 0.5s ease; /* Плавный переход для масштабирования и тени */
+}
+
+.dynamic-image {
+  width: 100%; /* Задаем ширину изображения */
+  height: auto; /* Сохраняем пропорции изображения */
+  transition: transform 0.5s ease; /* Плавный переход для трансформации */
+}
+
+.image-container:hover .dynamic-image {
+  transform: scale(1.1); /* Увеличиваем изображение при наведении */
+}
+
+.image-container:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Увеличиваем тень при наведении */
+  transform: translateY(-5px); /* Слегка поднимаем контейнер при наведении */
+}
+
