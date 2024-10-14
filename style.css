@@ -66,6 +66,8 @@ section{
 .prevers {
   rotate: 180deg;
   letter-spacing: 1.75em;
+  margin-right: 130px;
+  margin-left: -194px
 }
 
 .prevers:last-child {
@@ -211,6 +213,10 @@ main {
   .thirdBlockCardLeft img {
     width: 300px;
     height: 300px;
+  }
+  .prevers{
+    margin-right: 30px;
+    margin-left: -39px;
   }
 }
 
@@ -420,4 +426,5 @@ main {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Увеличиваем тень при наведении */
   transform: translateY(-5px); /* Слегка поднимаем контейнер при наведении */
 }
+
 

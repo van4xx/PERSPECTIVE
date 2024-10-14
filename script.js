@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // if (firstBlock) {
         //     firstBlock.scrollIntoView({ behavior: 'smooth' });
         // }
-        setTimeout(() => document.querySelector('.site-loader').remove(), 5000)
+        setTimeout(() => document.querySelector('.s ite-loader').remove(), 5000)
     }, 5000); // Время ожидания в миллисекундах
 
     // Пример для отслеживания завершения анимации прелоадера
