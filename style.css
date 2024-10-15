@@ -38,6 +38,7 @@ section{
   font-weight: normal;
   font-size: 3em;
   font-family: 'Helvetica';
+  margin-left: 55px;
 }
 
 #app {
@@ -65,13 +66,9 @@ section{
 
 .prevers {
   rotate: 180deg;
-  letter-spacing: 1.75em;
-  margin-right: 130px;
-  margin-left: -194px
-}
-
-.prevers:last-child {
-  /* letter-spacing: 0; */
+  letter-spacing: 1.75em;    
+  margin-right: 68px;
+  margin-left: -198px;
 }
 
 .prevers span{
@@ -95,6 +92,7 @@ main {
   max-height: 100vh;
   overflow: hidden;
   border-radius: 20px;
+  position: relative;
 }
 
 .firstBlock h1 {
@@ -127,6 +125,9 @@ main {
   height: 80vh;
   border-radius: 20px;
 }
+
+
+
 
 .secondBlock {
   display: flex;
@@ -215,8 +216,11 @@ main {
     height: 300px;
   }
   .prevers{
-    margin-right: 30px;
-    margin-left: -39px;
+    margin-right: 14px;
+    margin-left: -32px;;
+  }
+  .name{
+    margin-left: 0px;
   }
 }
 
@@ -348,7 +352,7 @@ main {
   font-family: 'Arial Black', serif;
   color: #497D67;
   padding: 20px 0 10px 0;
-  margin-bottom: 220px;
+  margin-bottom: 205px;
 }
 
 .emailBlock {
@@ -404,27 +408,46 @@ main {
   background: #5a8dc4; /* Изменение цвета кнопки при наведении */
 }
 
+.sound-toggle {
+  position: absolute;
+  bottom: 80px;
+  right: 60px;
+  background-color: transparent;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 30px;
+  color: #758b91;
+  z-index: 1000; /* Увеличиваем z-index для корректного отображения поверх изображения */
+  pointer-events: auto;
+  
+  /* Отключаем любые трансформации */
+  transform: none !important; 
+}
+
 .image-container {
+  position: relative; /* Устанавливаем для позиционирования дочерних элементов */
   z-index: 3;
-  overflow: hidden; /* Скрываем часть изображения, выходящую за пределы контейнера */
-  border-radius: 15px; /* Закругляем углы контейнера */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Добавляем тень к контейнеру */
-  transition: transform 0.5s ease, box-shadow 0.5s ease; /* Плавный переход для масштабирования и тени */
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease, box-shadow 6.5s ease;
 }
 
 .dynamic-image {
-  width: 100%; /* Задаем ширину изображения */
-  height: auto; /* Сохраняем пропорции изображения */
-  transition: transform 0.5s ease; /* Плавный переход для трансформации */
+  width: 100%;
+  height: auto;
+  transition: transform 6.5s ease;
 }
 
 .image-container:hover .dynamic-image {
-  transform: scale(1.1); /* Увеличиваем изображение при наведении */
+  transform: scale(1.1);
 }
 
 .image-container:hover {
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Увеличиваем тень при наведении */
-  transform: translateY(-5px); /* Слегка поднимаем контейнер при наведении */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
 }
+
 
 

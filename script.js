@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
     const coordsElement = document.querySelector('.coords');
-    const targetCoords = "−16°42′5<span>8</span>.02.75′";// Итоговые координаты
+    const targetCoords = "-16°42′5<span>8</span>.02.75′";// Итоговые координаты
     let interval;
 
 
     function getRandomCoords() {    
-        const degrees = Math.random() < 0.5 ? Math.floor(Math.random() * 80 - 90) : Math.floor(Math.random() * 80 + 10); 
+        const degrees = Math.floor(Math.random() * 81) + 10; 
         const minutes = Math.floor(Math.random() * 50 + 10); 
         const seconds = Math.floor(Math.random() * 50 + 10); 
         const fractions = Math.floor(Math.random() * 90 + 10);
         const fraction = Math.floor(Math.random() * 90 + 10); 
-        return `${degrees}°${minutes}′${seconds}.<span>${fractions}</span>.${fraction}′`;
+        return `-${degrees}°${minutes}′${seconds}.<span>${fractions}</span>.${fraction}′`;
     }
     
 
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    interval = setInterval(updateCoords, 300); 
+    interval = setInterval(updateCoords, 200); 
 
     setTimeout(() => {
         clearInterval(interval); 
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // if (firstBlock) {
         //     firstBlock.scrollIntoView({ behavior: 'smooth' });
         // }
-        setTimeout(() => document.querySelector('.s ite-loader').remove(), 5000)
+        setTimeout(() => document.querySelector('.site-loader').remove(), 5000)
     }, 5000); // Время ожидания в миллисекундах
 
     // Пример для отслеживания завершения анимации прелоадера
@@ -51,28 +51,39 @@ const fifthBlock = document.querySelector('#thirdCard');
 const sixthBlock = document.querySelector('#fourthCard');
 const pins = document.querySelectorAll('.pinContainer');
 
-if (window.innerWidth > 1100) {
-    window.addEventListener("scroll", (event) => {
-        let scroll = this.scrollY;
+// Добавляем плавный переход для opacity через CSS
+[thirdBlock, fourthBlock, fifthBlock, sixthBlock].forEach(block => {
+    block.style.transition = 'opacity 0.5s ease-in-out'; // Плавное изменение прозрачности
+});
 
+if (window.innerWidth > 1100) {
+    window.addEventListener("scroll", () => {
+        let scroll = window.scrollY;
+
+        // Изначально скрываем все блоки
+        thirdBlock.style.opacity = 0;
         fourthBlock.style.opacity = 0;
         fifthBlock.style.opacity = 0;
         sixthBlock.style.opacity = 0;
 
-        if (scroll < 4100) thirdBlock.style.opacity = '100%';
-        if (scroll > 4100 && scroll < 6100) {
-            thirdBlock.style.opacity = 0;
-            fourthBlock.style.opacity = '100%';
-        } else if (scroll > 6100 && scroll < 8200) {
-            fourthBlock.style.opacity = 0;
-            fifthBlock.style.opacity = '100%';
-        } else if (scroll > 8200) {
-            fifthBlock.style.opacity = 0;
-            sixthBlock.style.opacity = '100%';
-        } else sixthBlock.style.opacity = '100%';
-    })
-}
-else {
+        // Применяем условие для отображения блоков в зависимости от прокрутки
+        if (scroll < 4000) {
+            thirdBlock.style.opacity = '1'; // Показ первого блока
+        } 
+        if (scroll >= 4000 && scroll < 6000) {
+            thirdBlock.style.opacity = '0'; // Плавно скрываем первый блок
+            fourthBlock.style.opacity = '1'; // Показываем второй блок
+        } 
+        if (scroll >= 6000 && scroll < 8100) {
+            fourthBlock.style.opacity = '0'; // Плавно скрываем второй блок
+            fifthBlock.style.opacity = '1'; // Показываем третий блок
+        } 
+        if (scroll >= 8100) {
+            fifthBlock.style.opacity = '0'; // Плавно скрываем третий блок
+            sixthBlock.style.opacity = '1'; // Показываем четвертый блок
+        }
+    });
+} else {
     console.log(pins);
     pins.forEach((e) => {
         e.style.minHeight = 'auto';
@@ -115,9 +126,40 @@ window.addEventListener('scroll', () => {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const audio = document.getElementById("audio");
+    const firstBlock = document.querySelector(".image-container");
+    const soundToggle = document.getElementById("soundToggle");
+    let soundOn = true; // Начальное состояние звука включено
+
+    // Изначально включаем звук
+    audio.play();
+
+    // Функция для проверки видимости блока
+    function checkVisibility() {
+        const rect = firstBlock.getBoundingClientRect();
+        if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+            if (!soundOn) {
+                audio.play();
+            }
+        } else {
+            audio.pause();
+        }
+    }
+
+    // Обработчик клика для переключения звука
+    firstBlock.addEventListener("click", function () {
+        soundOn = !soundOn;
+        if (soundOn) {
+            audio.play();
+            soundToggle.textContent = "Sound: On";
+        } else {
+            audio.pause();
+            soundToggle.textContent = "Sound: Off";
+        }
+    });
 
 
-
-
+});
 
 
